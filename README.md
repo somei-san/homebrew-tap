@@ -2,18 +2,11 @@
 
 `cliip-show` などを Homebrew で配布するための Tap リポジトリです。
 
-## リポジトリ登録（初回のみ）
+## cliip-show
 
-```bash
-brew tap somei-san/tap
-```
+macOS 向けの常駐アプリ。クリップボードにコピーされたプレーンテキストを検知し、画面上部（設定で変更可）に短時間 HUD 表示します。
 
-## 機能1: cliip-show
-
-`cliip-show` は macOS 向けの常駐アプリです。  
-クリップボードにコピーされたプレーンテキストを検知し、画面上部（デフォルト、設定で変更可）に短時間（約1秒）HUD 表示します。
-
-- source repository: <https://github.com/somei-san/cliip-show>
+- source: <https://github.com/somei-san/cliip-show>
 - formula: `Formula/cliip-show.rb`
 
 ![cliip-show HUDの表示イメージ](docs/assets/cliip-show-hud.png)
@@ -25,18 +18,12 @@ brew install somei-san/tap/cliip-show
 brew services start cliip-show
 ```
 
-### 起動・停止（ログイン時自動起動）
-
-`cliip-show` は Homebrew Service として動作します。
+### サービス操作
 
 ```bash
-brew services start cliip-show
-```
-
-停止:
-
-```bash
-brew services stop cliip-show
+brew services start cliip-show    # 起動
+brew services stop cliip-show     # 停止
+brew services restart cliip-show  # 再起動（設定変更後など）
 ```
 
 ### 動作確認
