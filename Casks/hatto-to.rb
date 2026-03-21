@@ -1,6 +1,6 @@
 cask "hatto-to" do
   version "0.1.0"
-  sha256 "a093a4f21d5984197db53a14d953947984aa79582e3fd2b42ca1c8c997d276e7"
+  sha256 "f2c5209288895758e7dae850dd6339ad5f188945d88482486379471b9a126eed"
 
   url "https://github.com/somei-san/hatto-to/releases/download/v#{version}/Hatto-to_0.1.0_universal.dmg"
   name "Hatto-to"
@@ -8,6 +8,12 @@ cask "hatto-to" do
   homepage "https://github.com/somei-san/hatto-to"
 
   app "Hatto-to.app"
+
+  caveats <<~EOS
+    #{token} is not signed with an Apple Developer ID.
+    On first launch, you need to remove the quarantine attribute:
+      xattr -cr /Applications/Hatto-to.app
+  EOS
 
   zap trash: [
     "~/Library/Application Support/com.hatto-to.app",
