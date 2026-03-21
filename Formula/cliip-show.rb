@@ -1,8 +1,8 @@
 class CliipShow < Formula
   desc "Show copied clipboard text as a HUD on macOS"
   homepage "https://github.com/somei-san/cliip-show"
-  url "https://github.com/somei-san/cliip-show/archive/refs/tags/v0.1.4.tar.gz"
-  sha256 "388cbcdbf5984dbc8da99ab849d22df0f8688a28eb2beaa76d2d626355bf2869"
+  url "https://github.com/somei-san/cliip-show/archive/refs/tags/v0.1.5.tar.gz"
+  sha256 "0ecbb953555d904422f09358625270411dcea7fb922e48a695360e4010e8d49c"
   license "MIT"
   head "https://github.com/somei-san/cliip-show.git", branch: "main"
 
@@ -20,6 +20,9 @@ class CliipShow < Formula
 
       To stop:
         brew services stop cliip-show
+
+      To restart cliip-show after an upgrade:
+        brew services restart cliip-show
     EOS
   end
 
