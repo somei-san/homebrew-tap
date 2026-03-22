@@ -53,4 +53,4 @@ cliip-show --config set hud_duration_secs 2.0   # 表示時間
 brew services restart cliip-show                # 設定を反映
 ```
 
-> 全設定項目 → [somei-san/cliip-show](https://github.com/somei-san/cliip-show)
+> 全設定項目 → [somei-san/cliip-show](https://github.com/somei-san/cliip-show?tab=readme-ov-file#%E8%A1%A8%E7%A4%BA%E8%A8%AD%E5%AE%9A)
