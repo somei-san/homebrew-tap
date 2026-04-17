@@ -1,8 +1,8 @@
 cask "hattotto" do
-  version "0.1.10"
-  sha256 "59441d85b954cd514ea9bd6f50f194afc3741df76a96b2a10c69eec68e428901"
+  version "0.1.11"
+  sha256 "23cc1dcd147a1b6c8da7419b32c3ebb63433aa93289c31f1b37cf352ee6ac754"
 
-  url "https://github.com/somei-san/hattotto/releases/download/v#{version}/Hattotto_0.1.10_universal.dmg"
+  url "https://github.com/somei-san/hattotto/releases/download/v#{version}/Hattotto_0.1.11_universal.dmg"
   name "Hattotto"
   desc "macOS Stickies-style sticky notes desktop app"
   homepage "https://github.com/somei-san/hattotto"
