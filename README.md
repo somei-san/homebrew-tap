@@ -22,8 +22,11 @@ Markdown 対応・自動保存・ゴミ箱復元など、macOS Stickies の「�
 ### インストール
 
 ```bash
+brew trust somei-san/tap
 brew install --cask somei-san/tap/hattotto
 ```
+
+`brew trust` は初回のみ必要です。Homebrew 6 以降、信頼していない tap の cask は読み込まれません。これを省くと `brew upgrade` が hattotto をエラーも出さず飛ばすため、更新されないことに気づきにくくなります（cask のみ。下記 cliip-show は formula なので不要です）。
 
 ---
 
