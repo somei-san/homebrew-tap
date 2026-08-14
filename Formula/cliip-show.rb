@@ -1,8 +1,8 @@
 class CliipShow < Formula
   desc "Show copied clipboard text as a HUD on macOS"
   homepage "https://github.com/somei-san/cliip-show"
-  url "https://github.com/somei-san/cliip-show/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "b33d34e3c8c93f6a19f0bb1ca139c5763b15508a8504e9efe58cc41be66f4671"
+  url "https://github.com/somei-san/cliip-show/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "f624d1c83ef1826e41b22ea4a93b2d80906bcd0472a0afcbf25dc4347786ba67"
   license "MIT"
   head "https://github.com/somei-san/cliip-show.git", branch: "main"
 
@@ -15,24 +15,12 @@ class CliipShow < Formula
 
   def caveats
     <<~EOS
-      To launch cliip-show now and restart at login:
-        brew services start cliip-show
+      cliip-show manages its own auto-start. Launch it once:
+        #{opt_bin}/cliip-show
 
-      To stop:
-        brew services stop cliip-show
-
-      To restart cliip-show after an upgrade:
-        brew services restart cliip-show
+      Then open the menu bar icon > Settings... and check
+      "Automatically start at login" to enable auto-start.
     EOS
-  end
-
-  service do
-    run [opt_bin/"cliip-show"]
-    keep_alive true
-    run_at_load true
-    process_type :interactive
-    log_path var/"log/cliip-show.log"
-    error_log_path var/"log/cliip-show.log"
   end
 
   test do
