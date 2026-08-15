@@ -32,8 +32,8 @@ brew install --cask somei-san/tap/hattotto
 
 ## 🥜 cliip-show
 
-コピーしたテキストを画面に HUD 表示する常駐アプリ。
-「コピーしたつもりができてなかった」をなくします。
+コピーした内容を画面に HUD 表示する常駐アプリ。
+「コピーしたつもりができてなかった」をなくします。テキストはそのまま、画像はサムネイルで表示します。
 
 [リポジトリ](https://github.com/somei-san/cliip-show)
 
@@ -44,16 +44,21 @@ brew install --cask somei-san/tap/hattotto
 
 ```bash
 brew install somei-san/tap/cliip-show
-brew services start cliip-show
+cliip-show
 ```
 
-### 初期設定（お好みで）
+初回だけ手動で起動します。このコマンドはターミナルを占有しますが、起動時に出るダイアログで自動起動を有効にすれば、次回ログインからは自動で立ち上がります。
+
+### 設定
+
+メニューバーのアイコンから「設定…」を開いて変更します。「お試し表示」で見た目を確認しながら調整できます。
+
+CLI からも変更できます。変更は再起動なしで反映されます。
 
 ```bash
 cliip-show --config init                        # 設定ファイルを生成
 cliip-show --config set hud_position top        # 表示位置 (top / center / bottom)
 cliip-show --config set hud_duration_secs 2.0   # 表示時間
-brew services restart cliip-show                # 設定を反映
 ```
 
 > 全設定項目 → [somei-san/cliip-show](https://github.com/somei-san/cliip-show?tab=readme-ov-file#%E8%A1%A8%E7%A4%BA%E8%A8%AD%E5%AE%9A)
