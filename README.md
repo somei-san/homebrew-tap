@@ -26,7 +26,7 @@ brew trust somei-san/tap
 brew install --cask somei-san/tap/hattotto
 ```
 
-`brew trust` は初回のみ必要です。Homebrew 6 以降、信頼していない tap の cask は読み込まれません。これを省くと `brew upgrade` が hattotto をエラーも出さず飛ばすため、更新されないことに気づきにくくなります（cask のみ。下記 cliip-show は formula なので不要です）。
+`brew trust` は初回のみ必要です。Homebrew 6 以降、信頼していない tap の cask は読み込まれません。これを省くと `brew upgrade` が hattotto をエラーも出さず飛ばすため、更新されないことに気づきにくくなります。
 
 ---
 
@@ -43,11 +43,20 @@ brew install --cask somei-san/tap/hattotto
 ### インストール & 起動
 
 ```bash
-brew install somei-san/tap/cliip-show
-cliip-show
+brew trust somei-san/tap
+brew install --cask somei-san/tap/cliip-show
+open -a "Cliip Show"
 ```
 
-初回だけ手動で起動します。このコマンドはターミナルを占有しますが、起動時に出るダイアログで自動起動を有効にすれば、次回ログインからは自動で立ち上がります。
+初回だけ手動で起動します。起動時に出るダイアログで自動起動を有効にすれば、次回ログインからは自動で立ち上がります。
+
+Apple の Developer ID で署名していないため、インストール時に quarantine 属性を外します。
+
+formula 版を入れていた場合は、先にアンインストールしてから cask を入れます。自動起動は `.app` を一度起動すれば新しい場所を指すようになります。
+
+```bash
+brew uninstall cliip-show
+```
 
 ### 設定
 
