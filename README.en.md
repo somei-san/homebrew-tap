@@ -54,12 +54,6 @@ Launch it by hand the first time. Turn on start at login in the dialog it shows,
 
 Cliip Show is not signed with an Apple Developer ID, so the cask clears the quarantine attribute for you.
 
-If you had the formula installed, uninstall it before installing the cask. Launching the `.app` once points start at login at the new location.
-
-```bash
-brew uninstall cliip-show
-```
-
 ### Settings
 
 Open "Settings…" from the menu bar icon. That is the only way to change them. "Preview" lets you check how it looks while you adjust.
