@@ -1,5 +1,7 @@
 # somei-san/tap
 
+[English](README.en.md)
+
 macOS 向け自作ツールを Homebrew で配布するための Tap リポジトリです。
 
 ```bash
