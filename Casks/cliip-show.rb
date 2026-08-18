@@ -1,6 +1,6 @@
 cask "cliip-show" do
-  version "0.5.1"
-  sha256 "b49f1031c52d715daf4e7a4c8d85b5099d6bea7d64710d27d187d64ea569ad6e"
+  version "0.5.2"
+  sha256 "78d5881a0c91bf5a633ad836bd79022d3ac9a14e06eea886ca440d417f2cd8cf"
 
   url "https://github.com/somei-san/cliip-show/releases/download/v#{version}/Cliip-Show-#{version}-universal.zip"
   name "Cliip Show"
@@ -16,8 +16,10 @@ cask "cliip-show" do
     system_command "/usr/bin/xattr", args: ["-cr", "#{appdir}/Cliip Show.app"]
   end
 
-  uninstall quit:      "io.github.somei-san.cliip-show",
-            launchctl: "io.github.somei-san.cliip-show"
+  # launchctl: は指定しない。読み込みの有無に関わらず LaunchAgent の plist を消すうえ、
+  # uninstall は upgrade でも走るため、更新のたびに自動起動が無効になる。
+  # plist の後始末は zap に任せる。
+  uninstall quit: "io.github.somei-san.cliip-show"
 
   caveats <<~EOS
     Launch it once from Spotlight, or:
