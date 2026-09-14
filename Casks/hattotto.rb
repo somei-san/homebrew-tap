@@ -9,8 +9,8 @@ cask "hattotto" do
 
   app "Hattotto.app"
 
-  postflight do
-    system_command "/usr/bin/xattr", args: ["-cr", "#{appdir}/Hattotto.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/Hattotto.app"]
   end
 
   caveats <<~EOS
