@@ -1,16 +1,16 @@
 cask "hattotto" do
-  version "0.10.0"
-  sha256 "b19aed4c6c66fc2974cb359e794cdacd8500d428e808dc82d3eb805c0511d260"
+  version "0.10.1"
+  sha256 "72658c839b22f19a7322bed83676ec667d49baa94a8e2b2c5c4fea9724cee396"
 
-  url "https://github.com/somei-san/hattotto/releases/download/v#{version}/Hattotto_0.10.0_universal.dmg"
+  url "https://github.com/somei-san/hattotto/releases/download/v#{version}/Hattotto_0.10.1_universal.dmg"
   name "Hattotto"
   desc "macOS Stickies-style sticky notes desktop app"
   homepage "https://github.com/somei-san/hattotto"
 
   app "Hattotto.app"
 
-  postflight_steps do
-    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/Hattotto.app"]
+  postflight do
+    system_command "/usr/bin/xattr", args: ["-cr", "#{appdir}/Hattotto.app"]
   end
 
   caveats <<~EOS
