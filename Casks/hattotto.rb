@@ -1,11 +1,13 @@
 cask "hattotto" do
-  version "0.11.0"
-  sha256 "41ec6f5097eed1f6d662eb2adf73788d2d7561839c493a841f708e7c1bd005a9"
+  version "0.11.1"
+  sha256 "fb1ab0a3425865f829cf31171c6fc7949fdf5e66b9f571eada7083984b720264"
 
-  url "https://github.com/somei-san/hattotto/releases/download/v#{version}/Hattotto_0.11.0_universal.dmg"
+  url "https://github.com/somei-san/hattotto/releases/download/v#{version}/Hattotto_0.11.1_universal.dmg"
   name "Hattotto"
-  desc "macOS Stickies-style sticky notes desktop app"
+  desc "Stickies-style sticky notes desktop app"
   homepage "https://github.com/somei-san/hattotto"
+
+  depends_on :macos
 
   app "Hattotto.app"
 
@@ -13,12 +15,10 @@ cask "hattotto" do
     run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/Hattotto.app"]
   end
 
+  zap trash: "~/Library/Application Support/com.hattotto.app"
+
   caveats <<~EOS
     #{token} is not signed with an Apple Developer ID.
     The quarantine attribute has been automatically removed during installation.
   EOS
-
-  zap trash: [
-    "~/Library/Application Support/com.hattotto.app",
-  ]
 end
