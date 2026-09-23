@@ -59,3 +59,12 @@ Cliip Show is not signed with an Apple Developer ID, so the cask clears the quar
 Open "Settings…" from the menu bar icon. That is the only way to change them. "Preview" lets you check how it looks while you adjust.
 
 > Full list of settings → [somei-san/cliip-show](https://github.com/somei-san/cliip-show/blob/main/docs/development.md#%E8%A8%AD%E5%AE%9A%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%A8%E7%92%B0%E5%A2%83%E5%A4%89%E6%95%B0)
+
+---
+
+## Maintenance
+
+The casks in `Casks/` are regenerated from their sources and overwritten by GitHub Actions on each tool's release. When you change a cask, change its source the same way. A fix made only in this tap is reverted by the next release.
+
+- hattotto: [the heredoc in `.github/workflows/release.yml`](https://github.com/somei-san/hattotto/blob/d399af9954ecd4f800c49875b7ec54f73defc4c3/.github/workflows/release.yml#L71-L96)
+- cliip-show: [`packaging/homebrew/cliip-show.rb.template`](https://github.com/somei-san/cliip-show/blob/ba3abd0f1d72986bc4e71f9b0f83f530443d93db/packaging/homebrew/cliip-show.rb.template)

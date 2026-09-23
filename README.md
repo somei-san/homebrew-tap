@@ -59,3 +59,12 @@ Apple の Developer ID で署名していないため、インストール時に
 メニューバーのアイコンから「設定…」を開いて変更します。設定を変更する手段はこれだけです。「お試し表示」で見た目を確認しながら調整できます。
 
 > 全設定項目 → [somei-san/cliip-show](https://github.com/somei-san/cliip-show/blob/main/docs/development.md#%E8%A8%AD%E5%AE%9A%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%A8%E7%92%B0%E5%A2%83%E5%A4%89%E6%95%B0)
+
+---
+
+## メンテナンス
+
+`Casks/` の cask は、各ツールのリリース時に GitHub Actions が生成元から作り直して上書きします。cask を直すときは生成元も同じ内容に直してください。tap 側だけ直すと、次のリリースで元に戻ります。
+
+- hattotto: [`.github/workflows/release.yml` のヒアドキュメント](https://github.com/somei-san/hattotto/blob/d399af9954ecd4f800c49875b7ec54f73defc4c3/.github/workflows/release.yml#L71-L96)
+- cliip-show: [`packaging/homebrew/cliip-show.rb.template`](https://github.com/somei-san/cliip-show/blob/ba3abd0f1d72986bc4e71f9b0f83f530443d93db/packaging/homebrew/cliip-show.rb.template)
