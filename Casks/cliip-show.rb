@@ -1,6 +1,6 @@
 cask "cliip-show" do
-  version "0.6.0"
-  sha256 "cb04b3e2c67b78c289d5e139b843da23a438c02819d0bbf68d88fdc094cf93f0"
+  version "0.7.0"
+  sha256 "a4d220b68af5a809235e10abbc922f3d6d734291eff08ec1b743546a174b8c65"
 
   url "https://github.com/somei-san/cliip-show/releases/download/v#{version}/Cliip-Show-#{version}-universal.zip"
   name "Cliip Show"
